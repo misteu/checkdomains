@@ -17,7 +17,7 @@ if (!preg_match('/^[a-zA-Z0-9.-]+$/', $domain)) {
 // Run domain-check in streaming mode
 $cmd = "/usr/bin/sudo /usr/local/bin/domain-check "
      . escapeshellarg($domain)
-     . " --all --streaming --concurrency 20 2>&1";
+     . " --all --streaming --concurrency 50 2>&1";
 
 $handle = popen($cmd, 'r');
 
