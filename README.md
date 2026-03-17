@@ -2,6 +2,11 @@
 
 This project lets you run `domain-check` (see https://github.com/saidutt46/domain-check) via a simple web interface that can be uploaded to any webserver or run locally. By that you do not rely on any external batch domain checker tools.
 
+ <video width="320" height="240" controls>
+  <source src="https://github.com/misteu/checkdomains/raw/refs/heads/main/demo.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
+
 ## Attention
 
 Please do not use this on production as this requires to give some elevated rights (at least for accessing domain-check) to the `www-data` user.
