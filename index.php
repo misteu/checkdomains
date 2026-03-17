@@ -2,49 +2,108 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Domain Checker</title>
 
 <style>
-body { font-family: Arial; padding: 20px; }
+body {
+    font-family: Arial;
+    padding: 12px;
+    margin: 0;
+}
 
-h3 { margin-top: 25px; }
+/* 🔹 Top input area */
+.controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
 
-.section {
-    margin-top: 10px;
-    border: 1px solid #eee;
+input {
+    flex: 1;
+    min-width: 140px;
     padding: 10px;
-
-    /* 🔥 multi-column layout */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 6px;
+    font-size: 16px;
 }
 
-.row {
-    padding: 4px 6px;
-    font-family: monospace;
-    border-radius: 4px;
-    background: #fafafa;
+button {
+    padding: 10px 14px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.available { color: green; font-weight: bold; }
-.taken { color: red; }
-.unknown { color: orange; }
-
+/* 🔹 Status */
 #status {
     margin-top: 10px;
     font-size: 14px;
     color: #666;
 }
-</style>
 
+/* 🔹 Sections */
+h3 {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.section {
+    margin-top: 8px;
+    border: 1px solid #eee;
+    padding: 8px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 6px;
+}
+
+/* 🔹 Domain rows */
+.row {
+    padding: 6px;
+    font-family: monospace;
+    border-radius: 4px;
+    background: #fafafa;
+    font-size: 13px;
+    word-break: break-all;
+}
+
+.available {
+    color: green;
+    font-weight: bold;
+    background: #eaffea;
+}
+
+.taken {
+    color: red;
+}
+
+.unknown {
+    color: orange;
+}
+
+/* 🔥 Mobile tweaks */
+@media (max-width: 600px) {
+    .section {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .row {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}
+</style>
 
 </head>
 <body>
 
-<input id="domain" placeholder="domain">
-<button onclick="check()">Check</button>
-<button onclick="stop()">Stop</button>
+<div class="controls">
+    <input id="domain" placeholder="domain">
+    <button onclick="check()">Check</button>
+    <button onclick="stop()">Stop</button>
+</div>
 
 <div id="status">Idle</div>
 
